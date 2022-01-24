@@ -121,7 +121,7 @@ const Signin = () => {
 
   return (
     <PageContainer>
-      <PageTitle>Consistency</PageTitle>
+      <PageTitle>Habit</PageTitle>
       <SigninContainer>
         <FormTitle>Sign-in</FormTitle>
         {error && <ErrorSection>{findError("userNotFound")}</ErrorSection>}

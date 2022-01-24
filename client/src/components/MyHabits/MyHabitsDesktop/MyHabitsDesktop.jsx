@@ -64,7 +64,7 @@ const MyHabitsDesktop = () => {
   return (
     <GridContainer>
       <NavContainer>
-        <Title>Consistency</Title>
+        <Title>Habit</Title>
         <Goals />
       </NavContainer>
       <MainContainer>

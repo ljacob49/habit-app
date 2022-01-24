@@ -20,12 +20,12 @@ const MyHabits = () => {
   const { loggedInUser } = userState;
   const history = useHistory();
 
-  useEffect(() => {
-    if (!loggedInUser) {
-      // redirect
-      history.push("/signin");
-    }
-  }, [loggedInUser, history]);
+  // useEffect(() => {
+  //   if (!loggedInUser) {
+  //     // redirect
+  //     history.push("/signin");
+  //   }
+  // }, [loggedInUser, history]);
   return (
     <>
       <DesktopContainer>

@@ -1,5 +1,5 @@
 class Goal < ApplicationRecord
-    validates :description, presence: true
+    #validates :name, presence: true
     #validates :start_date, presence: true
   
     belongs_to :user
@@ -24,9 +24,4 @@ class Goal < ApplicationRecord
     def start_date_in_future?
       self.start_date.to_date > Time.now.localtime.to_date
     end
-  
-    def goal_finished?
-      self.days_completed >= 66
-    end 
-  
 end

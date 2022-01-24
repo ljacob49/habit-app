@@ -67,6 +67,13 @@ const Goals = () => {
     }
   }, [dispatch, loggedInUser, error]);
 
+  // const AllGoals = [
+  //     {id: 0, name: "lose weight"},
+  //     {id: 1, name: "Test"},
+  //     {id: 2, name: "Test"},
+  //     {id: 3, name: "Test"},
+  // ]
+
   return (
     <GoalsContainer>
       {error && <ErrorSection>{error[0].msg}</ErrorSection>}

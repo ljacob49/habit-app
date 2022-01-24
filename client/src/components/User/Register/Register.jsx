@@ -123,7 +123,7 @@ const Register = () => {
 
   return (
     <PageContainer>
-      <PageTitle>Consistency</PageTitle>
+      <PageTitle>Habit</PageTitle>
       <RegisterContainer>
         <FormTitle>Register</FormTitle>
         {error && <ErrorSection>{findError("registrationError")}</ErrorSection>}

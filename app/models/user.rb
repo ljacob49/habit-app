@@ -14,9 +14,5 @@ class User < ApplicationRecord
     def unique_habits
       self.habits.uniq { |h| h.name }
     end
-  
-    def self.user_with_most_goals
-      user = self.joins(:goals).group(:user_id).order('COUNT(goals.id) DESC').limit(1)
-      user.first
-    end
+
 end

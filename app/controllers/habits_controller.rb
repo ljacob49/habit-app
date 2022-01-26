@@ -1,32 +1,27 @@
 class HabitsController < ApplicationController
+  def index
+    render json: Habit.all
+  end
 
-    def index
-      habits = Habit.all
-      render json: habits
-    end 
+  def show
+    habit = Habit.find_by(id:params[:id])
+    render json: habit, status: :ok
+  end
 
-    def new
-      @habit = Habit.new(category_id: params[:category_id])
-    end
-  
-    def create
-      @habit = Habit.new(habit_params)
-      if @habit.save
-        redirect_to category_habits_path(@habit.category_id)
-      else
-        render :new
-      end
-    end
-  
-    #def index
-      #@category = Category.find(params[:category_id])
-      #@habits = @category.habits
-    #end
-  
-    private
-  
-    def habit_params
-      params.require(:habit).permit(:name, :category_id)
-    end
-  
+  def create
+    habit = @current_user.habits.create!(habit_params)
+    render json: habit, status: :created
+  end
+
+  def destroy
+    habit = Habit.find_by(id: params[:id])
+    habit.destroy
+    head :no_content
+end
+
+  private
+
+  def habit_params
+    params.permit(:id, :name, :description)
+  end
 end

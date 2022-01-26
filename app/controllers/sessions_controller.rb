@@ -1,38 +1,19 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize, only: :create
 
-    def new
-      @user = User.new
+  def create
+    user = User.find_by(username: params[:username])
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      render json: user
+    else
+      render json: { errors: ["Invalid username or password"] }, status: :unauthorized
     end
-  
-    def create
-      if auth
-        @user = User.find_or_create_by(email: auth['info']['email']) do |u|
-         u.name = auth['info']['name']
-         u.password = SecureRandom.hex(8)
-        end
-        login(@user)
-        redirect_to home_path
-      else
-        @user = User.find_by(email: params[:email])
-        if @user && @user.authenticate(params[:password])
-          login(@user)
-          redirect_to home_path
-        else
-          flash.now[:message] = "Incorrect e-mail or password"
-          render :new
-        end
-      end
-    end
-  
-    def destroy
-      session.delete :user_id
-      redirect_to new_session_path
-    end
-  
-    private
-  
-    def auth
-      request.env['omniauth.auth']
-    end
+  end
+
+  def destroy
+    session.delete :user_id
+    head :no_content
+  end
   
   end

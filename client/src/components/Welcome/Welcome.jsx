@@ -1,17 +1,19 @@
 import React from "react";
-// .banner-area{
-//   background-image: url('https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNzU5MjE4OA&ixlib=rb-1.2.1&q=85');
-//   background-position: center center;
-//   background-size:cover ;
-//   /* -webkit-background-size:cover ; */
-//   height: 100vh;
-//   width: auto;
-//   margin: auto;
-// }
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
-  return <div>Welcome</div>
-  
+  return <div className="banner-area">
+            <div className="banner-text">
+            <h1>The Habit App</h1>
+            <p> This project was made with React/Redux connecting to a Rails API. The styling for this app uses Styled Components. This project was made 
+              for the final phase of the Flatiron Curriculum. 
+
+              The inspiration for this app comes from my own desire to track the consistency with which I stick to my habits. It is my hope that this App 
+              will serve others in their aim to better themselves. 
+            </p>
+            <Link to ="/register">Register</Link>
+            </div>
+  </div>
   ;
 };
 

@@ -79,7 +79,7 @@ const ErrorSection = styled.div`
 
 const Signin = () => {
   const [userInfo, setUserInfo] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -127,12 +127,12 @@ const Signin = () => {
         {error && <ErrorSection>{findError("userNotFound")}</ErrorSection>}
         <FormContainer>
           <InputSection>
-            <label htmlFor="email">Email</label>
-            {error && <ErrorSection>{findError("email")}</ErrorSection>}
+            <label htmlFor="username">Username</label>
+            {error && <ErrorSection>{findError("username")}</ErrorSection>}
             <input
               type="text"
-              id="email"
-              placeholder="Email"
+              id="username"
+              placeholder="Username"
               maxLength="100"
               onChange={handleUserInfoChange}
             />

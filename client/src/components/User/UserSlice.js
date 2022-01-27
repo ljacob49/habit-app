@@ -11,7 +11,7 @@ const initUserState = {
 };
 
 export const registerUser = createAsyncThunk(
-  "user/register",
+  "/signup",
   async (userInfo, thunkAPI) => {
     // error handling
     const {
@@ -24,7 +24,7 @@ export const registerUser = createAsyncThunk(
 
     try {
       // make API call to /register
-      const response = await Axios.post("/user/register", userInfo);
+      const response = await Axios.post("/signup", userInfo);
       localStorage.setItem("user_info", JSON.stringify(response.data));
       return response.data;
     } catch (error) {
@@ -35,7 +35,7 @@ export const registerUser = createAsyncThunk(
 );
 
 export const signinUser = createAsyncThunk(
-  "user/signin",
+  "/login",
   async (userInfo, thunkAPI) => {
     // error handling
     const { loading, currentRequestID } = thunkAPI.getState().user.signinState;
@@ -45,7 +45,7 @@ export const signinUser = createAsyncThunk(
 
     try {
       // make API call to /signin
-      const response = await Axios.post("/user/signin", userInfo);
+      const response = await Axios.post("/login", userInfo);
       localStorage.setItem("user_info", JSON.stringify(response.data));
       return response.data;
     } catch (error) {

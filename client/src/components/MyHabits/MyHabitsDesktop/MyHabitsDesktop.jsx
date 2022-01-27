@@ -71,7 +71,7 @@ const MyHabitsDesktop = () => {
         <HeaderContainer>
           <HeaderItem>My Habits</HeaderItem>
           <HeaderItem>History</HeaderItem>
-          <HeaderItem>Hi {loggedInUser && loggedInUser.firstname}</HeaderItem>
+          <HeaderItem>Hello Louis {loggedInUser && loggedInUser.firstname}</HeaderItem>
           <HeaderItem>
             {loggedInUser && (
               <SignoutButton onClick={() => handleLogout()}>

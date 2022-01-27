@@ -97,7 +97,7 @@ const AddGoalButton = () => {
   return (
     <>
       <InnerAddGoalButton onClick={openModal}>
-        <img src="images/add.png" alt="add-goal-btn" />
+        <img src="/images/add.png" alt="add-goal-btn" />
         add a goal
       </InnerAddGoalButton>
       <Modal open={showModal} onClose={closeModal} center>

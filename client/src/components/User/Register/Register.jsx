@@ -78,9 +78,7 @@ const ErrorSection = styled.div`
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    username: "",
     password: "",
     passwordConfirmation: "",
   });
@@ -129,35 +127,13 @@ const Register = () => {
         {error && <ErrorSection>{findError("registrationError")}</ErrorSection>}
         <FormContainer>
           <InputSection>
-            <label htmlFor="firstName">First Name</label>
-            {error && <ErrorSection>{findError("firstName")}</ErrorSection>}
+            <label htmlFor="username">Username</label>
+            {error && <ErrorSection>{findError("username")}</ErrorSection>}
             <input
               type="text"
-              id="firstName"
-              placeholder="First Name"
+              id="username"
+              placeholder="Username"
               maxLength="60"
-              onChange={handleUserInfoChange}
-            />
-          </InputSection>
-          <InputSection>
-            <label htmlFor="lastName">Last Name</label>
-            {error && <ErrorSection>{findError("lastName")}</ErrorSection>}
-            <input
-              type="text"
-              id="lastName"
-              placeholder="Last Name"
-              maxLength="60"
-              onChange={handleUserInfoChange}
-            />
-          </InputSection>
-          <InputSection>
-            <label htmlFor="email">Email</label>
-            {error && <ErrorSection>{findError("email")}</ErrorSection>}
-            <input
-              type="text"
-              id="email"
-              placeholder="Email"
-              maxLength="100"
               onChange={handleUserInfoChange}
             />
           </InputSection>

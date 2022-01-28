@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Goals from "../../Goals/Goals";
 import { logoutUser } from "../../User/UserSlice";
 import { useDispatch, useSelector } from "react-redux";
+import HabitList from "../HabitList"
 
 const GridContainer = styled.div`
   display: grid;
@@ -54,6 +55,7 @@ const SignoutButton = styled.button`
   }
 `;
 
+
 const MyHabitsDesktop = () => {
   const userState = useSelector((state) => state.user);
   const { loggedInUser } = userState;
@@ -80,6 +82,7 @@ const MyHabitsDesktop = () => {
             )}
           </HeaderItem>
         </HeaderContainer>
+        <HabitList />
       </MainContainer>
     </GridContainer>
   );
